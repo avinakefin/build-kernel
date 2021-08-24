@@ -18,7 +18,7 @@ jobs:
         path: zipper
 
     - name: Android kernel build
-      uses: avinakefin/android-kernel-actions@master
+      uses: avinakefin/build-kernel@master
       id: build
       env:
         NAME: Samsoe
@@ -32,7 +32,7 @@ jobs:
     - name: Release build
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.CHANNEL_ID }}
-        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        to: -510134769
+        token: 1702742721:AAFKZlzVymadj-x-ZUtYMM_yehmhxFluTIk
         message: Kernel is built!, took ${{ steps.build.outputs.elapsed_time }} seconds.
         document: ${{ steps.build.outputs.outfile }}
